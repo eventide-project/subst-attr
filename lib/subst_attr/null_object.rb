@@ -1,4 +1,4 @@
-module NullAttr
+module SubstAttr
   module NullObject
     extend self
 

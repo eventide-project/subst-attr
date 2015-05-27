@@ -10,14 +10,14 @@ module StrictSpecializedNullObject
   end
 
   class Example
-    extend NullAttr::Macro
+    extend SubstAttr::Macro
 
-    null_attr :some_attr, SomeDependency
+    subst_attr :some_attr, SomeDependency
   end
 end
 
 describe StrictSpecializedNullObject::Example do
-  context "The impersonated class has an inner 'NullObject' module with a 'build' method" do
+  context "The impersonated class has an inner 'NullObject' constant with a 'build' method" do
     specify "Impersonated class provides specialized null object" do
       expect(subject.some_attr).to eq(:some_null_object)
     end

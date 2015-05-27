@@ -4,9 +4,9 @@ module Strict
   end
 
   class Example
-    extend NullAttr::Macro
+    extend SubstAttr::Macro
 
-    null_attr :some_attr, SomeDependency
+    subst_attr :some_attr, SomeDependency
   end
 end
 

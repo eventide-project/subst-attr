@@ -1,8 +1,8 @@
-module NullAttr
+module SubstAttr
   module Macro
-    def null_attr_macro(attr_name, interface=nil)
-      NullAttr::Attribute.define(self, attr_name, interface)
+    def subst_attr_macro(attr_name, interface=nil)
+      SubstAttr::Attribute.define(self, attr_name, interface)
     end
-    alias :null_attr :null_attr_macro
+    alias :subst_attr :subst_attr_macro
   end
 end

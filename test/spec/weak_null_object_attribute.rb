@@ -1,8 +1,8 @@
 module Weak
   class Example
-    extend NullAttr::Macro
+    extend SubstAttr::Macro
 
-    null_attr :some_attr
+    subst_attr :some_attr
   end
 end
 

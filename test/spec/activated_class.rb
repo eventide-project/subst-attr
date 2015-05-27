@@ -2,17 +2,17 @@ module ActivatedClass
   class Example
   end
 
-  NullAttr.activate Example
+  SubstAttr.activate Example
 
   class Example
-    null_attr :some_attr
+    subst_attr :some_attr
   end
 end
 
 describe ActivatedClass::Example do
   context "NullAddr is activated for a specific class" do
     specify "The class is a NullAttr" do
-      expect(ActivatedClass::Example).to be_a NullAttr::Macro
+      expect(ActivatedClass::Example).to be_a SubstAttr::Macro
     end
   end
 end
