@@ -1,23 +1,23 @@
-module NullObjectType
+module SubstituteType
   class SomeInterface
     def a_method; end
   end
 end
 
-describe SubstAttr::NullObject do
+describe "Null Object" do
   context "No interface provided to impersonate" do
-    subject(:null_object) { SubstAttr::NullObject.build }
+    subject(:null_object) { SubstAttr::Substitute.build }
 
     specify "Weak null object" do
-      expect(subject.class).to eq(SubstAttr::NullObject::Weak)
+      expect(subject.class).to eq(SubstAttr::Substitute::Weak)
     end
   end
 
   context "Interface provided to impersonate" do
-    subject(:null_object) { SubstAttr::NullObject.build NullObjectType::SomeInterface }
+    subject(:null_object) { SubstAttr::Substitute.build SubstituteType::SomeInterface }
 
     specify "Strict null object" do
-      expect(subject.class.ancestors).to include(NullObjectType::SomeInterface)
+      expect(subject.class.ancestors).to include(SubstituteType::SomeInterface)
     end
   end
 end

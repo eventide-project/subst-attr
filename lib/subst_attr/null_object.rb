@@ -1,5 +1,5 @@
 module SubstAttr
-  module NullObject
+  module Substitute
     extend self
 
     Weak = Naught.build do |config|
