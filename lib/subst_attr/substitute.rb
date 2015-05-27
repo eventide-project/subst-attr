@@ -4,16 +4,14 @@ module SubstAttr
 
     def build(interface=nil)
       if interface
-        specialization = specialization(interface)
+        specialization = specialization(interface, :Substitute)
         return specialization if specialization
       end
 
       return NullObject.build interface
     end
 
-    def specialization(interface)
-      const_name = :Substitute
-
+    def specialization(interface, const_name)
       unless interface.const_defined?(const_name)
         return nil
       end
@@ -39,7 +37,7 @@ module SubstAttr
 
       def build(interface=nil)
         if interface
-          specialization = specialization(interface)
+          specialization = Substitute.specialization(interface, :NullObject)
           return specialization if specialization
         end
 
@@ -56,22 +54,6 @@ module SubstAttr
           config.singleton
           config.impersonate interface
         end.get
-      end
-
-      def specialization(interface)
-        const_name = :NullObject
-
-        unless interface.const_defined?(const_name)
-          return nil
-        end
-
-        mod = interface.const_get(const_name)
-
-        unless mod.respond_to?(:build)
-          return nil
-        end
-
-        mod.send :build
       end
     end
   end
