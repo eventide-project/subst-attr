@@ -1,20 +1,30 @@
 module SubstAttr
   module Substitute
-    def self.build(interface=nil)
-      specialization = specialization(interface)
-      return specialization if specialization
+    extend self
 
+    def build(interface=nil)
+      if interface
+        specialization = specialization(interface)
+        return specialization if specialization
+      end
 
-      return NullObject.weak unless interface
-      return NullObject.strict interface
+      return NullObject.build interface
     end
 
-    def self.specialization(interface)
-      unless defined?(interface::NullObject) && interface::NullObject.respond_to?(:build)
+    def specialization(interface)
+      const_name = :Substitute
+
+      unless interface.const_defined?(const_name)
         return nil
       end
 
-      interface::NullObject.build
+      mod = interface.const_get(const_name)
+
+      unless mod.respond_to?(:build)
+        return nil
+      end
+
+      mod.send :build
     end
 
     module NullObject
@@ -27,10 +37,15 @@ module SubstAttr
         config.singleton
       end
 
-      # def build(interface=nil)
-      #   return weak unless interface
-      #   return strict interface
-      # end
+      def build(interface=nil)
+        if interface
+          specialization = specialization(interface)
+          return specialization if specialization
+        end
+
+        return weak unless interface
+        return strict interface
+      end
 
       def weak
         Weak.get
@@ -41,6 +56,22 @@ module SubstAttr
           config.singleton
           config.impersonate interface
         end.get
+      end
+
+      def specialization(interface)
+        const_name = :NullObject
+
+        unless interface.const_defined?(const_name)
+          return nil
+        end
+
+        mod = interface.const_get(const_name)
+
+        unless mod.respond_to?(:build)
+          return nil
+        end
+
+        mod.send :build
       end
     end
   end
