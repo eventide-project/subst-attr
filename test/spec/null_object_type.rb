@@ -9,7 +9,7 @@ describe "Null Object" do
     subject(:null_object) { SubstAttr::Substitute.build }
 
     specify "Weak null object" do
-      expect(subject.class).to eq(SubstAttr::Substitute::Weak)
+      expect(subject.class).to eq(SubstAttr::Substitute::NullObject::Weak)
     end
   end
 
