@@ -35,5 +35,8 @@ module SubstAttr
 
       interface::NullObject.build
     end
+
+    module NullObject
+    end
   end
 end
