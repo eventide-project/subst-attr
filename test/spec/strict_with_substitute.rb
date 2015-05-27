@@ -16,10 +16,10 @@ module StrictWithSubstitute
   end
 end
 
-describe StrictWithSubstitute do
+describe StrictWithSubstitute::Example do
   context "The impersonated class has an inner 'Substitute' constant with a 'build' method" do
-    specify "Impersonated class provides specialized null object" #do
-    #   expect(subject.some_attr).to eq(:some_substutute)
-    # end
+    specify "Impersonated class provides specialized null object" do
+      expect(subject.some_attr).to eq(:some_substutute)
+    end
   end
 end
