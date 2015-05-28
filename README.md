@@ -119,3 +119,7 @@ end
 ```
 
 As in the example above, for a class to be "activated" for `SubstAddr`, the class must have already been defined. The `subst_addr` class method must be visible to the class using it, either my including it in the class directly, or by including it in any super class of the using class.
+
+## License
+
+The `subst_attr` library is released under the [MIT License](https://github.com/obsidian-btc/subst-attr/blob/master/MIT-License.txt).
