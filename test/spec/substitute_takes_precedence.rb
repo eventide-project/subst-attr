@@ -1,7 +1,5 @@
 module SubstituteTakesPrecedence
   class SomeDependency
-    def a_method; end
-
     module Substitute
       def self.build
         :some_substutute

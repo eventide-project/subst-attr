@@ -1,6 +1,5 @@
 module SubstituteType
   class SomeInterface
-    def a_method; end
   end
 end
 

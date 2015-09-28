@@ -1,7 +1,5 @@
 module StrictSpecializedNullObject
   class SomeDependency
-    def a_method; end
-
     module NullObject
       def self.build
         :some_null_object
