@@ -1,8 +1,8 @@
-require './prox_gem'
+source 'https://gem.fury.io/obsidian/' do
+  gem 'attribute'
+end
 
 source 'https://rubygems.org'
-
-prox_gem 'attribute'
 
 gem 'naught', '1.0.0'
 gem 'rspec', '~> 3.2.0'
