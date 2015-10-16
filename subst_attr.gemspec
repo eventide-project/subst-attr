@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.name = 'subst_attr'
   s.summary = 'Declare attributes that have default implementations that are substitutes or null objects'
-  s.version = '0.0.0'
+  s.version = '0.1.0'
   s.authors = ['']
   s.require_paths = ['lib']
   s.files = Dir.glob('{lib}/**/*')
