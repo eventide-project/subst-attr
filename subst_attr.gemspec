@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency 'attribute'
 
-  s.add_runtime_dependency 'naught', '1.0.0'
+  s.add_runtime_dependency 'naught'
 
   s.add_development_dependency 'minitest'
   s.add_development_dependency 'minitest-spec-context'
