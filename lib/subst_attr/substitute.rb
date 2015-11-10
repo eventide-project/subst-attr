@@ -38,11 +38,15 @@ module SubstAttr
       def build(interface=nil)
         if interface
           specialization = Substitute.specialization(interface, :NullObject)
-          return specialization if specialization
+
+          if specialization
+            return specialization
+          else
+            return strict interface
+          end
         end
 
-        return weak unless interface
-        return strict interface
+        weak
       end
 
       def weak

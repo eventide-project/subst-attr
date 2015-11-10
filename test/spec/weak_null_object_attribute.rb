@@ -1,3 +1,5 @@
+require_relative 'spec_init'
+
 module Weak
   class Example
     extend SubstAttr::Macro
@@ -6,10 +8,9 @@ module Weak
   end
 end
 
-describe Weak::Example do
-  context "Weak null object" do
-    specify "The attribute's value responds to any method" do
-      expect { subject.some_attr.some_method }.not_to raise_error
-    end
+describe "Weak null object" do
+  specify "The attribute's value responds to any method" do
+    example = Weak::Example.new
+    example.some_attr.some_method
   end
 end
