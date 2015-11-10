@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
 
   s.authors = ['Obsidian Software, Inc']
   s.email = 'opensource@obsidianexchange.com'
-  s.homepage = 'https://github.com/obsidian-btc/error_data'
+  s.homepage = 'https://github.com/obsidian-btc/subst-attr'
   s.licenses = ['MIT']
 
   s.require_paths = ['lib']
@@ -16,7 +16,6 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>= 2.2.3'
 
   s.add_runtime_dependency 'attribute'
-  s.add_runtime_dependency 'telemetry-logger'
 
   s.add_runtime_dependency 'naught', '1.0.0'
 
