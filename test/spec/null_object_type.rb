@@ -18,7 +18,7 @@ describe "Null Object" do
     null_object = SubstAttr::Substitute.build SubstituteType::SomeInterface
 
     specify "Strict null object" do
-      assert(null_object.class.ancestors == SubstituteType::SomeInterface)
+      assert(null_object.class.ancestors.include? SubstituteType::SomeInterface)
     end
   end
 end
