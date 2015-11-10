@@ -16,8 +16,11 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>= 2.2.3'
 
   s.add_runtime_dependency 'attribute'
+  s.add_runtime_dependency 'telemetry-logger'
 
-  s.add_runtime_dependency 'naught'
+  s.add_runtime_dependency 'naught', '1.0.0'
 
-  s.add_development_dependency 'rspec', '~> 3.2.0'
+  s.add_development_dependency 'minitest'
+  s.add_development_dependency 'minitest-spec-context'
+  s.add_development_dependency 'pry'
 end
