@@ -1,3 +1,5 @@
+require_relative 'spec_init'
+
 module SubstituteTakesPrecedence
   class SomeDependency
     module Substitute
@@ -20,10 +22,9 @@ module SubstituteTakesPrecedence
   end
 end
 
-describe StrictWithSubstitute::Example do
-  context "Both the substitute and null object namespaces are defined" do
-    specify "The substitute takes precedence over null object specialization" do
-      expect(subject.some_attr).to eq(:some_substutute)
-    end
+describe "Both the substitute and null object namespaces are defined" do
+  specify "The substitute takes precedence over null object specialization" do
+    example = StrictWithSubstitute::Example.new
+    assert(example.some_attr == :some_substutute)
   end
 end

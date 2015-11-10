@@ -1,3 +1,5 @@
+require_relative 'spec_init'
+
 module StrictSpecializedNullObject
   class SomeDependency
     module NullObject
@@ -14,10 +16,9 @@ module StrictSpecializedNullObject
   end
 end
 
-describe StrictSpecializedNullObject::Example do
-  context "The impersonated class has an inner 'NullObject' constant with a 'build' method" do
-    specify "Impersonated class provides specialized null object" do
-      expect(subject.some_attr).to eq(:some_null_object)
-    end
+describe "The impersonated class has an inner 'NullObject' constant with a 'build' method" do
+  specify "Impersonated class provides specialized null object" do
+    example = StrictSpecializedNullObject::Example.new
+    assert(example.some_attr == :some_null_object)
   end
 end

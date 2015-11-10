@@ -1,4 +1,5 @@
 require 'naught'
+
 require 'attribute'
 
 require 'subst_attr/substitute'

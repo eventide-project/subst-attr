@@ -1,3 +1,5 @@
+require_relative 'spec_init'
+
 module StrictWithAncestorSubstitute
   class BaseDependency
     module Substitute
@@ -17,10 +19,9 @@ module StrictWithAncestorSubstitute
   end
 end
 
-describe StrictWithAncestorSubstitute::Example do
-  context "The impersonated class has an ancestor with an inner 'Substitute' constant with a 'build' method" do
-    specify "Impersonated class provides specialized substitute" do
-      expect(subject.some_attr).to eq(:base_substutute)
-    end
+describe "The impersonated class has an ancestor with an inner 'Substitute' constant with a 'build' method" do
+  specify "Impersonated class provides specialized substitute" do
+    example = StrictWithAncestorSubstitute::Example.new
+    assert(example.some_attr == :base_substutute)
   end
 end

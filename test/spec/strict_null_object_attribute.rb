@@ -1,3 +1,5 @@
+require_relative 'spec_init'
+
 module Strict
   class SomeDependency
     def a_method; end
@@ -10,16 +12,18 @@ module Strict
   end
 end
 
-describe Strict::Example do
+describe "String" do
+  example = Strict::Example.new
+
   context "Methods not on the impersonated class" do
     specify "The attribute's value doesn't respond" do
-      expect { subject.some_attr.some_method }.to raise_error
+      assert_raises { example.some_attr.some_method }
     end
   end
 
   context "Methods on the impersonated class" do
     specify "The attribute's value responds" do
-      expect { subject.some_attr.a_method }.to_not raise_error
+      example.some_attr.a_method
     end
   end
 end
