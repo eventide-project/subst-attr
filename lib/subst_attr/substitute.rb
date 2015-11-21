@@ -11,6 +11,12 @@ module SubstAttr
       return NullObject.build interface
     end
 
+    def call(receiver, attr_name)
+      interface = receiver.send(attr_name).class
+      substitute = build(interface)
+      receiver.send :"#{attr_name}=", substitute
+    end
+
     def specialization(interface, const_name)
       unless interface.const_defined?(const_name)
         return nil
