@@ -28,7 +28,7 @@ end
 
 describe "Replace an Attribute with its Substitute" do
   example = ReplaceWithSubstitute::Example.build
-  SubstAttr::Substitute.(example, :some_attr)
+  SubstAttr::Substitute.(:some_attr, example)
 
   specify do
     assert(example.some_attr == :some_substutute)

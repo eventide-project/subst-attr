@@ -11,7 +11,7 @@ module SubstAttr
       return NullObject.build interface
     end
 
-    def call(receiver, attr_name)
+    def call(attr_name, receiver)
       interface = receiver.send(attr_name).class
       substitute = build(interface)
       receiver.send :"#{attr_name}=", substitute
