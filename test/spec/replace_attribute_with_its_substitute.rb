@@ -26,11 +26,11 @@ module ReplaceWithSubstitute
   end
 end
 
-describe "Replace an Attribute with its Substitute" do
+context "Replace an Attribute with its Substitute" do
   example = ReplaceWithSubstitute::Example.build
   SubstAttr::Substitute.(:some_attr, example)
 
-  specify do
+  test do
     assert(example.some_attr == :some_substutute)
   end
 end

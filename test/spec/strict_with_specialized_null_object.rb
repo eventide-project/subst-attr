@@ -16,8 +16,8 @@ module StrictSpecializedNullObject
   end
 end
 
-describe "The impersonated class has an inner 'NullObject' constant with a 'build' method" do
-  specify "Impersonated class provides specialized null object" do
+context "The impersonated class has an inner 'NullObject' constant with a 'build' method" do
+  test "Impersonated class provides specialized null object" do
     example = StrictSpecializedNullObject::Example.new
     assert(example.some_attr == :some_null_object)
   end

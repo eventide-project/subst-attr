@@ -22,9 +22,9 @@ module SubstituteTakesPrecedence
   end
 end
 
-describe "Both the substitute and null object namespaces are defined" do
-  specify "The substitute takes precedence over null object specialization" do
-    example = StrictWithSubstitute::Example.new
+context "Both the substitute and null object namespaces are defined" do
+  test "The substitute takes precedence over null object specialization" do
+    example = SubstituteTakesPrecedence::Example.new
     assert(example.some_attr == :some_substutute)
   end
 end

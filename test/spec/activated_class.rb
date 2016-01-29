@@ -12,8 +12,8 @@ module ActivatedClass
 end
 
 
-describe "NullAddr is activated for a specific class" do
-  specify "The class is a NullAttr" do
+context "NullAddr is activated for a specific class" do
+  test "The class is a NullAttr" do
     assert(ActivatedClass::Example.is_a? SubstAttr::Macro)
   end
 end

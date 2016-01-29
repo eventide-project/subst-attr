@@ -16,8 +16,8 @@ module StrictWithSubstitute
   end
 end
 
-describe "The impersonated class has an inner 'Substitute' constant with a 'build' method" do
-  specify "Impersonated class provides specialized substitute" do
+context "The impersonated class has an inner 'Substitute' constant with a 'build' method" do
+  test "Impersonated class provides specialized substitute" do
     example = StrictWithSubstitute::Example.new
     assert(example.some_attr == :some_substutute)
   end

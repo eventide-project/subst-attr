@@ -12,17 +12,22 @@ module Strict
   end
 end
 
-describe "String" do
+context "String" do
   example = Strict::Example.new
 
   context "Methods not on the impersonated class" do
-    specify "The attribute's value doesn't respond" do
-      assert_raises { example.some_attr.some_method }
+    test "The attribute's value doesn't respond" do
+      begin
+        example.some_attr.some_method
+      rescue => error
+      end
+
+      assert error
     end
   end
 
   context "Methods on the impersonated class" do
-    specify "The attribute's value responds" do
+    test "The attribute's value responds" do
       example.some_attr.a_method
     end
   end

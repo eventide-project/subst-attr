@@ -4,9 +4,9 @@ module ActivatedObjectClass
   SubstAttr.activate
 end
 
-describe ActivatedObjectClass do
+context ActivatedObjectClass do
   context "NullAddr is not activated for a specific class" do
-    specify "NullAttr is activated for the Object class" do
+    test "NullAttr is activated for the Object class" do
       assert(Object.is_a? SubstAttr::Macro)
     end
   end

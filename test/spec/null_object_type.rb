@@ -5,11 +5,11 @@ module SubstituteType
   end
 end
 
-describe "Null Object" do
+context "Null Object" do
   context "No interface provided to impersonate" do
     substitute = SubstAttr::Substitute.build
 
-    specify "Weak null object" do
+    test "Weak null object" do
       assert(substitute.class == SubstAttr::Substitute::NullObject::Weak)
     end
   end
@@ -17,7 +17,7 @@ describe "Null Object" do
   context "Interface provided to impersonate" do
     null_object = SubstAttr::Substitute.build SubstituteType::SomeInterface
 
-    specify "Strict null object" do
+    test "Strict null object" do
       assert(null_object.class.ancestors.include? SubstituteType::SomeInterface)
     end
   end
