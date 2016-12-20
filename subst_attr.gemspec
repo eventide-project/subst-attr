@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 Gem::Specification.new do |s|
   s.name = 'evt-subst_attr'
-  s.version = '0.1.0.0'
+  s.version = '0.1.0.1'
   s.summary = 'Declare attributes that have default implementations that are substitutes or null objects'
   s.description = ' '
 
@@ -19,5 +19,5 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency 'naught'
 
-  s.add_development_dependency 'ntl-test_bench'
+  s.add_development_dependency 'test_bench'
 end
