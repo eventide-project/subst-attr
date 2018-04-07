@@ -8,7 +8,7 @@ module SubstAttr
         return specialization if specialization
       end
 
-      return NullObject.build interface
+      return NullObject.build(interface)
     end
 
     def call(attr_name, receiver)
@@ -28,7 +28,7 @@ module SubstAttr
         return nil
       end
 
-      mod.send :build
+      mod.send(:build)
     end
 
     module NullObject
