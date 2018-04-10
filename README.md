@@ -37,11 +37,9 @@ e.some_method # => No error raised
 e.anything # => NoMethodError is raised
 ```
 
-### A Strict Attribute that Provides a Specialized Substitute
+## Specialized Substitute
 
-If the class used to define the attribute's strict interface has an inner `NullObject` namespace that has a `build` method, the object that will be used as the null object is the one returned from the `build` method.
-
-_NOTE: Use this if a custom substitute implementation is needed, including a specialized null object_
+If the class used to define the attribute's strict interface has an inner `Substitute` namespace that has a `build` method, the object that will be used as the null object is the one returned from the `build` method.
 
 ```ruby
 class SomeDependency
@@ -52,32 +50,6 @@ class SomeDependency
   module Substitute
     def self.build
       SomeOtherThing.etc
-    end
-  end
-end
-
-class Example
-  subst_attr :some_attr, SomeDependency
-end
-
-e = Example.new
-```
-
-### [Deprecated] A Strict Attribute that Provides a Specialized Null Object
-
-[Deprecated: Use the Substitute feature instead]
-
-If the class used to define the attribute's strict interface has an inner `NullObject` namespace that has a `build` method, the object that will be used as the null object is the one returned from the `build` method.
-
-```ruby
-class SomeDependency
-  def some_method
-    # ...
-  end
-
-  module NullObject
-    def self.build
-      SomeOtherNullObjectLibrary.etc
     end
   end
 end
