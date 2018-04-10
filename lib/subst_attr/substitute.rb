@@ -4,7 +4,7 @@ module SubstAttr
 
     def build(interface=nil)
       if interface
-        specialization = specialization(interface, :Substitute)
+        specialization = specialization(interface)
         return specialization if specialization
       end
 
@@ -17,7 +17,8 @@ module SubstAttr
       receiver.send :"#{attr_name}=", substitute
     end
 
-    def specialization(interface, const_name)
+    def specialization(interface)
+      const_name = :Substitute
       unless interface.const_defined?(const_name)
         return nil
       end
@@ -43,13 +44,7 @@ module SubstAttr
 
       def build(interface=nil)
         if interface
-          specialization = Substitute.specialization(interface, :NullObject)
-
-          if specialization
-            return specialization
-          else
-            return strict interface
-          end
+          return strict(interface)
         end
 
         weak
@@ -62,7 +57,7 @@ module SubstAttr
       def strict(interface)
         Naught.build do |config|
           config.singleton
-          config.impersonate interface
+          config.impersonate(interface)
         end.get
       end
     end
