@@ -13,4 +13,3 @@ context "Null Object" do
     end
   end
 end
-

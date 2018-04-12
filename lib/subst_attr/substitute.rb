@@ -18,18 +18,21 @@ module SubstAttr
     end
 
     def specialization(interface)
-      const_name = :Substitute
-      unless interface.const_defined?(const_name)
+      constant_name = :Substitute
+
+      reflection = Reflect.(interface, constant_name, strict: false, ancestors: true)
+
+      if reflection.nil?
         return nil
       end
 
-      mod = interface.const_get(const_name)
+      specialization_module = reflection.constant
 
-      unless mod.respond_to?(:build)
+      unless specialization_module.respond_to?(:build)
         return nil
       end
 
-      mod.send(:build)
+      specialization_module.send(:build)
     end
 
     module NullObject

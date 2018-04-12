@@ -16,6 +16,7 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>= 2.3.3'
 
   s.add_runtime_dependency 'evt-attribute'
+  s.add_runtime_dependency 'evt-reflect'
 
   s.add_runtime_dependency 'naught'
 

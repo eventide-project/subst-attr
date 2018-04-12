@@ -1,6 +1,7 @@
 require 'naught'
 
 require 'attribute'
+require 'reflect'
 
 require 'subst_attr/substitute'
 require 'subst_attr/attribute'
