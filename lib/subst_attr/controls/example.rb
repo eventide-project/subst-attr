@@ -1,7 +1,7 @@
 module SubstAttr
   module Controls
     class Example
-      extend SubstAttr::Macro
+      SubstAttr.activate(self)
 
       subst_attr :some_attr, Dependency::Example
 
@@ -15,7 +15,7 @@ module SubstAttr
 
       module Ancestry
         class Example
-          extend SubstAttr::Macro
+          SubstAttr.activate(self)
 
           subst_attr :some_attr, Dependency::Example::Descendant
         end
