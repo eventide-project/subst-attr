@@ -1,7 +1,7 @@
 module SubstAttr
   module Controls
     class Example
-      SubstAttr.activate(self)
+      include SubstAttr
 
       subst_attr :some_attr, Dependency::Example
 
