@@ -2,7 +2,7 @@ require_relative '../automated_init'
 
 context "Null Object" do
   context "Weak" do
-    example = SubstAttr::Controls::Example.build
+    example = Controls::Example.build
 
     context "Invoking Methods Not Implemented" do
       test "Is not an error" do

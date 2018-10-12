@@ -2,7 +2,7 @@ require_relative '../automated_init'
 
 context "Substitute" do
   context "From Ancestor Dependency" do
-    example = SubstAttr::Controls::Example::Ancestry::Example.new
+    example = Controls::Example::Ancestry::Example.new
 
     test do
       assert(example.some_attr == :some_substutute)
