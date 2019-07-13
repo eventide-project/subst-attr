@@ -12,19 +12,20 @@ module SubstAttr
       end
 
       def weak
+        unless self.const_defined?(:Weak, false)
+          cls = Mimic::Build.(Object) do
+            def method_missing(*)
+            end
+          end
+
+          const_set(:Weak, cls)
+        end
+
         Weak.new
       end
 
       def strict(interface)
-        Naught.build do |config|
-          config.singleton
-          config.impersonate(interface)
-        end.get
-      end
-
-      class Weak
-        def method_missing(*)
-        end
+        Mimic.(interface)
       end
     end
   end
