@@ -3,13 +3,6 @@ module SubstAttr
     module NullObject
       extend self
 
-      Weak = Naught.build do |config|
-        config.define_explicit_conversions
-        config.define_implicit_conversions
-        config.predicates_return false
-        config.singleton
-      end
-
       def build(interface=nil)
         if interface
           return strict(interface)
@@ -19,7 +12,7 @@ module SubstAttr
       end
 
       def weak
-        Weak.get
+        Weak.new
       end
 
       def strict(interface)
@@ -27,6 +20,11 @@ module SubstAttr
           config.singleton
           config.impersonate(interface)
         end.get
+      end
+
+      class Weak
+        def method_missing(*)
+        end
       end
     end
   end
