@@ -1,8 +1,8 @@
-require 'naught'
-
+require 'mimic'
 require 'attribute'
 require 'reflect'
 
+require 'subst_attr/substitute/null_object'
 require 'subst_attr/substitute'
 require 'subst_attr/attribute'
 require 'subst_attr/macro'

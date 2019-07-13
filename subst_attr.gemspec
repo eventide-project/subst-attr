@@ -17,8 +17,7 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency 'evt-attribute'
   s.add_runtime_dependency 'evt-reflect'
-
-  s.add_runtime_dependency 'naught'
+  s.add_runtime_dependency 'evt-mimic'
 
   s.add_development_dependency 'test_bench'
 end
