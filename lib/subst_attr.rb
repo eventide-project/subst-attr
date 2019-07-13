@@ -2,7 +2,9 @@ require 'naught'
 
 require 'attribute'
 require 'reflect'
+require 'mimic'
 
+require 'subst_attr/substitute/null_object'
 require 'subst_attr/substitute'
 require 'subst_attr/attribute'
 require 'subst_attr/macro'
