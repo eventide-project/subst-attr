@@ -11,21 +11,17 @@ module SubstAttr
         weak
       end
 
+      def strict(interface)
+        Mimic.(interface, record: false)
+      end
+
       def weak
-        unless self.const_defined?(:Weak, false) ## Why tf would :Weak be defined??
-          cls = Mimic::Build.(Object, record: false) do
-            def method_missing(*)
-            end
-          end
-
-          const_set(:Weak, cls)
-        end
-
         Weak.new
       end
 
-      def strict(interface)
-        Mimic.(interface, record: false)
+      Weak = Mimic::Build.(Object, record: false) do
+        def method_missing(*)
+        end
       end
     end
   end
