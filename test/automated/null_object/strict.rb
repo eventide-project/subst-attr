@@ -11,6 +11,12 @@ context "Null Object" do
         end
       end
     end
+
+    context "Recording" do
+      test "Not a recorder" do
+        refute(example.is_a? Mimic::Recorder)
+      end
+    end
   end
 end
 

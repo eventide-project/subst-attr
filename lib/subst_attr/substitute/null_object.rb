@@ -25,7 +25,7 @@ module SubstAttr
       end
 
       def strict(interface)
-        Mimic.(interface)
+        Mimic.(interface, record: false)
       end
     end
   end
