@@ -15,6 +15,7 @@ module SubstAttr
       interface = receiver.send(attr_name).class
       substitute = build(interface)
       receiver.send :"#{attr_name}=", substitute
+      substitute
     end
 
     def specialization(interface)
