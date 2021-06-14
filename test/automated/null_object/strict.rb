@@ -14,7 +14,7 @@ context "Null Object" do
 
     context "Recording" do
       test "Not a recorder" do
-        refute(example.is_a? Mimic::Recorder)
+        refute(example.some_attr.is_a? Mimic::Recorder)
       end
     end
   end
