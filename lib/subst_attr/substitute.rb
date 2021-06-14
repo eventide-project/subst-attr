@@ -29,6 +29,10 @@ module SubstAttr
 
       specialization_module = reflection.constant
 
+      if specialization_module.equal?(self)
+        return nil
+      end
+
       unless specialization_module.respond_to?(:build)
         return nil
       end

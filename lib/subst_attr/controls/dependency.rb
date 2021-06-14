@@ -15,6 +15,11 @@ module SubstAttr
         class Descendant < Example
         end
       end
+
+      module NoSubstitute
+        class Example
+        end
+      end
     end
   end
 end
