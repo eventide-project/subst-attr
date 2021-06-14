@@ -8,7 +8,7 @@ module SubstAttr
 
         module Substitute
           def self.build
-            :some_substutute
+            :some_substitute
           end
         end
 

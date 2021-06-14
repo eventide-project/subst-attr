@@ -8,7 +8,7 @@ context "Substitute" do
     some_substitute = SubstAttr::Substitute.(:some_attr, example)
 
     test "Return value is the substitute" do
-      assert(some_substitute == :some_substutute)
+      assert(some_substitute == :some_substitute)
     end
   end
 end
