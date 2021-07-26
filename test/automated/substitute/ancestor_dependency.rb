@@ -5,7 +5,7 @@ context "Substitute" do
     example = Controls::Example::Ancestry::Example.new
 
     test do
-      assert(example.some_attr == :some_substutute)
+      assert(example.some_attr == :some_substitute)
     end
   end
 end

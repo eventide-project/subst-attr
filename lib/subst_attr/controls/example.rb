@@ -3,9 +3,11 @@ module SubstAttr
     class Example
       include SubstAttr
 
-      subst_attr :some_attr, Dependency::Example
+      subst_attr :specialized_substitute_attr, Dependency::Example
 
-      subst_attr :weak_attr
+      subst_attr :strict_substitute_attr, Dependency::NoSubstitute::Example
+
+      subst_attr :weak_substitute_attr
 
       def self.build
         new.tap do |instance|
