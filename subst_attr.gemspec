@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 Gem::Specification.new do |s|
   s.name = 'evt-subst_attr'
-  s.version = '2.1.0.3'
+  s.version = '2.2.0.0'
   s.summary = 'Declare attributes that have default implementations that are substitutes or null objects'
   s.description = ' '
 
