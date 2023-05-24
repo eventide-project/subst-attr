@@ -8,11 +8,16 @@ context "Null Object" do
       def some_method
       end
     end
+
     assert(cls::Substitute == SubstAttr::Substitute)
 
     substitute = SubstAttr::Substitute.build(cls)
 
-    compare_methods = substitute.methods - Mimic.preserved_methods
+    compare_methods =
+      substitute.methods -
+      Mimic::Recorder.instance_methods -
+      Mimic.preserved_methods
+
     compare_methods.sort!
 
     control_methods = Mimic.subject_methods(cls).map { |method| method.name }
