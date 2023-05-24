@@ -3,8 +3,9 @@ module SubstAttr
     extend self
 
     def build(interface=nil, record: nil)
-## record to true
-      record ||= false
+      if record.nil?
+        record = true
+      end
 
       if interface.nil?
         return NullObject.build
