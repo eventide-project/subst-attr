@@ -9,6 +9,8 @@ module SubstAttr
 
       subst_attr :weak_substitute_attr
 
+      subst_attr :mixed_in_substitute_attr, Dependency::MixinSubstitute::Example
+
       def self.build
         new.tap do |instance|
           Dependency::Example.configure(instance)

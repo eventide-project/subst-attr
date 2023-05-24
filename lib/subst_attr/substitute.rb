@@ -2,13 +2,36 @@ module SubstAttr
   module Substitute
     extend self
 
-    def build(interface=nil)
-      if interface
-        specialization = specialization(interface)
-        return specialization if specialization
+    def build(interface=nil, record: nil)
+## record to true
+      record ||= false
+
+      if interface.nil?
+        return NullObject.build
       end
 
-      return NullObject.build(interface)
+      substitute_module = substitute_module(interface)
+
+      if substitute_module.nil?
+        return mimic(interface, record)
+      end
+
+      if substitute_module.respond_to?(:build)
+        return substitute_module.send(:build)
+      end
+
+      mimic = mimic(interface, record)
+      mimic.extend(substitute_module)
+
+      mimic
+    end
+
+    def null_object
+      NullObject.build
+    end
+
+    def mimic(interface, record)
+      Mimic.(interface, record: record)
     end
 
     def call(attr_name, receiver)
@@ -18,7 +41,7 @@ module SubstAttr
       substitute
     end
 
-    def specialization(interface)
+    def substitute_module(interface)
       constant_name = :Substitute
 
       reflection = Reflect.(interface, constant_name, strict: false, ancestors: true)
@@ -27,17 +50,13 @@ module SubstAttr
         return nil
       end
 
-      specialization_module = reflection.constant
+      mod = reflection.constant
 
-      if specialization_module.equal?(self)
+      if mod.equal?(self)
         return nil
       end
 
-      unless specialization_module.respond_to?(:build)
-        return nil
-      end
-
-      specialization_module.send(:build)
+      mod
     end
   end
 end

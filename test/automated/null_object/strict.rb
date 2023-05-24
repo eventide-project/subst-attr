@@ -14,6 +14,7 @@ context "Null Object" do
 
     context "Recording" do
       test "Not a recorder" do
+## change to be a recorder
         refute(example.strict_substitute_attr.is_a? Mimic::Recorder)
       end
     end

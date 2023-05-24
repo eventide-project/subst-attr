@@ -4,17 +4,21 @@ context "Null Object" do
   context "Weak" do
     example = Controls::Example.new
 
+    substitute = example.weak_substitute_attr
+
+    detail "Weak Substitute: #{substitute}"
+
     context "Invoking Methods Not Implemented" do
       test "Is not an error" do
         refute_raises(NoMethodError) do
-          example.weak_substitute_attr.some_method
+          substitute.some_method
         end
       end
     end
 
     context "Recording" do
       test "Not a recorder" do
-        refute(example.weak_substitute_attr.is_a? Mimic::Recorder)
+        refute(substitute.is_a? Mimic::Recorder)
       end
     end
   end

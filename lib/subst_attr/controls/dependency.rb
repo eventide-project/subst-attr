@@ -20,6 +20,15 @@ module SubstAttr
         class Example
         end
       end
+
+      module MixinSubstitute
+        class Example
+          module Substitute
+            def some_method
+            end
+          end
+        end
+      end
     end
   end
 end

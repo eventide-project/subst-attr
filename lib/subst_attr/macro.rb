@@ -1,5 +1,6 @@
 module SubstAttr
   module Macro
+## record: true
     def subst_attr_macro(attr_name, interface=nil)
       SubstAttr::Attribute.define(self, attr_name, interface)
     end
