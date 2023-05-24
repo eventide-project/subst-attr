@@ -21,7 +21,7 @@ module SubstAttr
         class Example
           include SubstAttr
 
-          subst_attr :some_attr, Dependency::Example::Descendant
+          subst_attr :some_dependency_attr, Dependency::Example::Descendant
         end
       end
     end

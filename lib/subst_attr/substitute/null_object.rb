@@ -4,10 +4,10 @@ module SubstAttr
       extend self
 
       def build
-        MimicClass.new
+        Implementation.new
       end
 
-      MimicClass = Mimic::Build.(Object, record: false) do
+      Implementation = Mimic::Build.(Object, record: false) do
         def method_missing(*)
         end
       end

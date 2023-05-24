@@ -1,7 +1,7 @@
 require_relative '../automated_init'
 
 context "Substitute" do
-  context "Definition" do
+  context "Constructor" do
     example_class = Controls::Dependency::Example
 
     test "Dependency class provides substitute namespace" do

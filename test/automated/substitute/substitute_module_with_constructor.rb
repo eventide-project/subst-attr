@@ -1,10 +1,10 @@
 require_relative '../automated_init'
 
-context "Null Object" do
-  context "Specialized" do
+context "Substitute" do
+  context "Module with Constructor" do
     example = Controls::Example.new
 
-    test "Attribute value is the substitute" do
+    test "Dependency attribute value is the return value of the constructor" do
       assert(example.specialized_substitute_attr == :some_substitute)
     end
   end

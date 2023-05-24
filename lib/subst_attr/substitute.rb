@@ -53,6 +53,9 @@ module SubstAttr
 
       mod = reflection.constant
 
+      # Special case:
+      # Including Substitute puts SubstAttr::Substitute
+      # in the constant lookup class
       if mod.equal?(self)
         return nil
       end
