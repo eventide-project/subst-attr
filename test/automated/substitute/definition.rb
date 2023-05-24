@@ -8,7 +8,7 @@ context "Substitute" do
       assert(example_class.const_defined?(:Substitute, false))
     end
 
-    test "Substitute namespace implemented build method" do
+    test "Substitute namespace implements build method" do
       assert(Controls::Dependency::Example::Substitute.respond_to?(:build))
     end
   end
