@@ -1,7 +1,7 @@
 require_relative '../automated_init'
 
 context "Substitute" do
-  context "Return Value" do
+  context "Build Method" do
     example = Controls::Example.build
     assert(example.specialized_substitute_attr.is_a?(Controls::Dependency::Example))
 
