@@ -9,7 +9,7 @@ context "Substitute" do
     end
 
     test "Substitute namespace implements build method" do
-      assert(Controls::Dependency::Example::Substitute.respond_to?(:build))
+      assert(example_class::Substitute.respond_to?(:build))
     end
   end
 end
