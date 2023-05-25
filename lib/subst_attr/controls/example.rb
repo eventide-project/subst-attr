@@ -6,7 +6,7 @@ module SubstAttr
       subst_attr :constructed_substitute_attr, Dependency::Example
 
       subst_attr :mimic_substitute_attr, Dependency::NoSubstituteModule::Example
-      subst_attr :no_recorder_mimic_substitute_attr, Dependency::NoSubstituteModule::Example
+      subst_attr :no_recorder_mimic_substitute_attr, Dependency::NoSubstituteModule::Example, record: false
 
       subst_attr :null_object_substitute_attr
 

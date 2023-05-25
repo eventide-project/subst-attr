@@ -18,6 +18,8 @@ module SubstAttr
 
       module NoSubstituteModule
         class Example
+          def some_method
+          end
         end
       end
 
