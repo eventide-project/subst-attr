@@ -1,6 +1,6 @@
 # subst_attr
 
-The SubsAttr library is the internal implementation of the Dependency library.
+The SubsAttr library is the internal implementation of Eventide's Dependency library.
 
 See the Dependency library for more information:
 [https://github.com/eventide-project/dependency](https://github.com/eventide-project/dependency)
