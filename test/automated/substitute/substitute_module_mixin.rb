@@ -4,7 +4,7 @@ context "Substitute" do
   context "Substitute Module Mixin" do
     example = Controls::Example.new
 
-    substitute = example.mixed_in_substitute_attr
+    substitute = example.mixed_in_mimic_substitute_attr
 
     detail "Substitute: #{substitute.inspect}"
     detail "Substitute Ancestors: #{substitute.class.ancestors.inspect}"
