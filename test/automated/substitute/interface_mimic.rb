@@ -7,14 +7,14 @@ context "Null Object" do
     context "Invoking Methods Not Implemented By the Interface" do
       test "Is an error" do
         assert_raises(NoMethodError) do
-          example.strict_substitute_attr.some_method
+          example.mimic_substitute_attr.some_method
         end
       end
     end
 
     context "Recording" do
       test "Is a recorder" do
-        assert(example.strict_substitute_attr.is_a? Mimic::Recorder)
+        assert(example.mimic_substitute_attr.is_a? Mimic::Recorder)
       end
     end
   end

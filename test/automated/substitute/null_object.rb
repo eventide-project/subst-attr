@@ -4,7 +4,7 @@ context "Substitute" do
   context "Null Object" do
     example = Controls::Example.new
 
-    substitute = example.weak_substitute_attr
+    substitute = example.null_object_substitute_attr
 
     detail "Null Object Substitute: #{substitute}"
 

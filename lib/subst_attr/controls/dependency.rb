@@ -3,7 +3,7 @@ module SubstAttr
     module Dependency
       class Example
         def self.configure(receiver)
-          receiver.specialized_substitute_attr = new
+          receiver.constructed_substitute_attr = new
         end
 
         module Substitute
@@ -16,7 +16,7 @@ module SubstAttr
         end
       end
 
-      module NoSubstitute
+      module NoSubstituteModule
         class Example
         end
       end
