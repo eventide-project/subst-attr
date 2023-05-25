@@ -1,16 +1,16 @@
 module SubstAttr
   module Substitute
-    module NullObject
-      extend self
+    def self.null_object_class
+      Mimic::Build.(Object, record: false) do
+        def self.build
+          new
+        end
 
-      def build
-        Implementation.new
-      end
-
-      Implementation = Mimic::Build.(Object, record: false) do
         def method_missing(*)
         end
       end
     end
+
+    NullObject = Class.new(null_object_class)
   end
 end
