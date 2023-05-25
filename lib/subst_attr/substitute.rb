@@ -2,9 +2,9 @@ module SubstAttr
   module Substitute
     extend self
 
-    def build(interface=nil, record: nil)
+    def build(interface=nil, record=nil)
       if record.nil?
-        record = true
+        record = Defaults.record
       end
 
       if interface.nil?
@@ -61,6 +61,12 @@ module SubstAttr
       end
 
       mod
+    end
+
+    module Defaults
+      def self.record
+        true
+      end
     end
   end
 end
