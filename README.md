@@ -7,4 +7,4 @@ See the Dependency library for more information:
 
 ## License
 
-The `subst_attr` library is released under the [MIT License](https://github.com/obsidian-btc/subst-attr/blob/master/MIT-License.txt).
+The `subst_attr` library is released under the [MIT License](https://github.com/eventide-project/subst-attr/blob/master/MIT-License.txt).
