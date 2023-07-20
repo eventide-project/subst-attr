@@ -18,7 +18,7 @@ context "Substitute" do
 
     context "Recording" do
       test "Not a recorder" do
-        refute(substitute.is_a? Mimic::Recorder)
+        refute(substitute.is_a?(RecordInvocation))
       end
     end
   end

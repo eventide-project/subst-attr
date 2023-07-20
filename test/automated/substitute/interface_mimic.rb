@@ -14,7 +14,7 @@ context "Substitute" do
 
     context "Recording" do
       test "Mimic is a recorder" do
-        assert(example.mimic_substitute_attr.is_a? Mimic::Recorder)
+        assert(example.mimic_substitute_attr.is_a?(RecordInvocation))
       end
 
       context "Invocations" do
